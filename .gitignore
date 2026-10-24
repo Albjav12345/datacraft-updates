@@ -1,0 +1,7 @@
+*.dpapi
+*.key
+*.pfx
+*.p12
+*.tmp
+private*
+__pycache__/

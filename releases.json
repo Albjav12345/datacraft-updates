@@ -1,0 +1,28 @@
+{
+  "packageName": "dev.amedina.datacraft",
+  "releases": [
+    {
+      "version": "1.1.1",
+      "minimumUnity": "6000.0.85f1",
+      "publishedAtUtc": "2026-10-24T00:00:00Z",
+      "kind": "features",
+      "importance": "normal",
+      "summary": "Unity 6 LTS compatibility, polished workspace and optional assistant integration.",
+      "changes": [
+        "Minimum Unity 6.0 LTS 6000.0.85f1; 846 core Editor tests passed on each tested Windows Editor: 6000.0.85f1, 6000.3.27f1 and 6000.5.5f1.",
+        "Corrected endpoint opening on older Editors and keyboard focus in the transfer menu.",
+        "Refined Files compact actions, Help support contact and version-first Settings.",
+        "Optional Codex/Claude Code integration contains six guides and three C# examples.",
+        "Runtime APIs and serialized formats remain unchanged.",
+        "Stratus/Helio passed 25 Editor and 8 Play Mode checks on both tested LTS configurations. Emberfall is verified with Unity 6000.0.85f1/URP17.0.4; the bundled URP in the tested 6000.3.27f1 installation has an independent compilation issue."
+      ],
+      "affectsFrom": "0.0.0",
+      "affectsBefore": "1.1.1",
+      "mitigation": "",
+      "stores": {
+        "assetStore": false,
+        "itch": true
+      }
+    }
+  ]
+}
