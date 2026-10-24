@@ -6,7 +6,7 @@ This repository contains public release metadata and publisher tooling only. It 
 
 DataCraft 1.2.0 reads `updates-v2.json` over HTTPS, verifies its RSA-3072/SHA-256 publisher signature against a public key compiled into the Editor, bounds the document and rejects invalid JSON/contracts and sequence rollback. Release text is rendered as plain text inside the Editor. Store URLs are fixed in the client, not commands or download addresses supplied by metadata.
 
-Choose **Unity Asset Store** or **itch.io** in Settings. A tarball/Assets installation alone does not establish the purchase store. Optional automatic checks are off by default, run at most daily while Unity is open, and can be disabled. Failed/offline checks are distinguished from saved verified information. No game/project data is uploaded; no binary or source code is downloaded or installed by this channel. Updates still use each purchaser's store entitlement.
+Retail packages carry an explicit **Unity Asset Store** or **itch.io** edition marker and present separate update actions. Only development previews show a QA channel selector, which never grants access to downloads. Optional automatic checks are off by default, run at most daily while Unity is open, and can be disabled. Failed/offline checks are distinguished from saved verified information. Public notice checks upload no game/project data or account tokens. Asset Store editions use Unity Package Manager and Unity entitlement. itch.io editions sign in through the official OAuth browser flow, verify official purchase/gift/bundle access and may download/install a verified archive after the user chooses Update. Passwords stay in the browser; no publisher API key is distributed. Download authorization is not DRM against copying local source.
 
 Each release explicitly declares features/fixes/security, normal/recommended/critical importance, affected `[affectsFrom, affectsBefore)` versions, a full minimum Unity version and separate store availability. A pending Unity review is **not** an available Asset Store download. Critical fixes pending in one store remain visible as pending, without pretending an update can be downloaded there. A later compatible release carries earlier critical notices that affect the installed version.
 
@@ -31,3 +31,19 @@ The private key is **not** in this repository or in commercial packages. On the 
 Signatures authenticate metadata; they do not encrypt game JSON or protect a compromised local Editor/publisher account. Persisted sequence/hash checks prevent rollback after a client has seen newer signed metadata. A first contact cannot establish historical freshness from a static document alone. Offline/disabled checks cannot provide immediate alerts; the Editor shows check/publication dates. Metadata older than 90 days never claims a fresh current version: verify your store and have the publisher refresh the signed channel with the same publishing command, even when no new package is needed. Normal TLS connection metadata is visible to the hosting provider; no project paths, saves or authentication headers are sent.
 
 The starting history records **1.1.1 in itch.io**, confirmed by the publisher: https://albjav12345.itch.io/datacraft/devlog/1726077/datacraft-111-unity-6-lts-full-compatibility . Asset Store remains unavailable until actual approval/public availability. The prepared 1.2.0 client is not announced as published by this setup.
+
+## Authenticated itch.io artifacts
+
+`artifacts-v1.json` is a separate publisher-signed **DataCraft.UpdateArtifacts / version 1** envelope. Its public payload contains only package/version, exact itch archive filename, byte length, outer ZIP SHA-256, inner signed tarball filename and SHA-256. It contains no commercial bytes, user token or download URL. An empty list means no in-Editor artifact has been announced yet. Normal version/severity notices remain in updates-v2.json.
+
+After uploading the exact signed ZIP and confirming it is available to buyers, update releases.json and run:
+
+```powershell
+pwsh -File ./Publish-Updates.ps1 -ConfirmStoreAvailability -ItchArchive "C:/Releases/DataCraft-1.2.0-itch-signed.zip" -Publish
+```
+
+Use the exact uploaded filename. The local path is never copied into metadata. The tool verifies the retail edition and signed-tarball presence, calculates both hashes, binds the artifact to a release actually marked available in itch.io, signs/verifies both documents and publishes only the allowlist. For note/store-flag changes or quarterly freshness renewal without a new archive, omit -ItchArchive. Never announce an upload/review as released.
+
+The new account/download client is in preparation and is not announced as an available 1.2.0 release. Official gifts and bundles count as access. Bundle owners may need to claim the individual product in their itch.io library first. Selecting a store or possessing a package copy never authenticates a download. The client does not lock ordinary authoring/runtime use behind a login. OAuth account credentials go to itch.io only; CDN downloads never receive the bearer token.
+
+Verified package tarballs and a previous version are retained under the private consuming project's Packages/DataCraft~/Archives, referenced relatively for portability and Library cleanup. Tokens are held separately in OS credential storage where supported, otherwise only in the current Editor session. Installation records/backups in Library enable observation/recovery after code reload; the updater never silently rewrites authoring data or saves.

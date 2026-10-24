@@ -11,3 +11,4 @@ jobs:
         with:
           python-version: '3.x'
       - run: python build-channel.py --verify
+      - run: python prepare-artifacts.py --verify
