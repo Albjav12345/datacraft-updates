@@ -29,9 +29,10 @@ try {
     $target=Join-Path $PSScriptRoot 'updates-v2.json';$tempTarget=$target+'.tmp'
     [IO.File]::WriteAllText($tempTarget,$envelope+"`n",[Text.UTF8Encoding]::new($false))
     Move-Item -LiteralPath $tempTarget -Destination $target -Force
+    Move-Item -LiteralPath ($temporary+'.legacy.json') -Destination (Join-Path $PSScriptRoot 'latest.json') -Force
     $pem="-----BEGIN PUBLIC KEY-----`n"+[Convert]::ToBase64String($rsa.ExportSubjectPublicKeyInfo(),[Base64FormattingOptions]::InsertLineBreaks)+"`n-----END PUBLIC KEY-----`n"
     [IO.File]::WriteAllText((Join-Path $PSScriptRoot 'publisher-public-key.pem'),$pem,[Text.UTF8Encoding]::new($false))
-} finally { if ($clear) { [Array]::Clear($clear,0,$clear.Length) };$rsa.Dispose();if (Test-Path -LiteralPath $temporary) { Remove-Item -LiteralPath $temporary -Force } }
+} finally { if ($clear) { [Array]::Clear($clear,0,$clear.Length) };$rsa.Dispose();foreach($p in @($temporary,($temporary+'.legacy.json'))){if (Test-Path -LiteralPath $p) { Remove-Item -LiteralPath $p -Force }} }
 Write-Output "Signed metadata sequence $sequence prepared. No commercial package or game data is included."
 if ($Publish) {
     $allowed=@('README.md','releases.json','updates-v2.json','latest.json','publisher-public-key.json','publisher-public-key.pem','Publish-Updates.ps1','Backup-SigningKey.ps1','build-channel.py','.gitignore','.github/workflows/validate.yml')

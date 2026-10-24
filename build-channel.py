@@ -50,7 +50,7 @@ def build(output,sequence):
     Path(output).write_bytes(raw)
     common=next((r for r in releases if r['stores']['itch']),None)
     legacy={'schemaVersion':1,'packageName':data['packageName'],'latest':None if common is None else {'version':common['version'],'minimumUnity':common['minimumUnity'],'releaseNotesUrl':''}}
-    (ROOT/'latest.json').write_text(json.dumps(legacy,indent=2)+'\n',encoding='utf-8')
+    Path(str(output)+'.legacy.json').write_text(json.dumps(legacy,indent=2)+'\n',encoding='utf-8')
 def verify():
     envelope=load(ROOT/'updates-v2.json');keys(envelope,'format formatVersion keyId payload signature')
     if envelope['format']!='DataCraft.Updates' or envelope['formatVersion']!=2 or envelope['keyId']!='publisher-2026-10':raise ValueError('Unknown envelope identity.')
