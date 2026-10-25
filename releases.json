@@ -2,6 +2,28 @@
   "packageName": "dev.amedina.datacraft",
   "releases": [
     {
+      "version": "1.2.0",
+      "minimumUnity": "6000.0.85f1",
+      "publishedAtUtc": "2026-10-25T14:47:36Z",
+      "kind": "features",
+      "importance": "recommended",
+      "summary": "Publisher-verified release information and updates through your purchase edition.",
+      "changes": [
+        "Each retail edition follows its own purchase-store update route without a customer store selector.",
+        "Read features, fixes, security importance, affected versions and Unity requirements in the Editor.",
+        "Manual and optional daily signed checks, labelled offline information and a 24-hour reminder.",
+        "Integrity checks and explicit installation preserve separate authoring data and game saves.",
+        "Runtime APIs, existing IDs and serialized formats remain unchanged."
+      ],
+      "affectsFrom": "1.1.1",
+      "affectsBefore": "1.2.0",
+      "mitigation": "",
+      "stores": {
+        "itch": true,
+        "assetStore": false
+      }
+    },
+    {
       "version": "1.1.1",
       "minimumUnity": "6000.0.85f1",
       "publishedAtUtc": "2026-10-24T00:00:00Z",
