@@ -1,6 +1,29 @@
 param([switch]$Publish,[switch]$ConfirmStoreAvailability,[string]$ItchArchive)
 $ErrorActionPreference='Stop'
 if (-not $ConfirmStoreAvailability) { throw 'Verify actual store downloads before announcing a release. Upload/review is not publication.' }
+$metadataFiles=@('README.md','releases.json','updates-v2.json','latest.json','artifacts.json','artifacts-v1.json','prepare-artifacts.py','publisher-public-key.json','publisher-public-key.pem','Publish-Updates.ps1','Backup-SigningKey.ps1','build-channel.py','.gitignore','.github/workflows/validate.yml')
+
+function Assert-PublishCheckout([string]$RepositoryRoot) {
+    $remote=& git -C $RepositoryRoot remote get-url origin
+    if ($LASTEXITCODE -ne 0 -or $remote.Trim() -ne 'https://github.com/Albjav12345/datacraft-updates.git') { throw 'Unexpected metadata repository remote.' }
+    $safeTracked=@($metadataFiles)+@('PUBLISHING.md')
+    $inventoryPath=Join-Path $RepositoryRoot 'docs/.datacraft-docs-inventory.json'
+    if(Test-Path -LiteralPath $inventoryPath) {
+        $inventory=Get-Content -LiteralPath $inventoryPath -Raw | ConvertFrom-Json
+        $safeTracked+=@('docs/.datacraft-docs-inventory.json')
+        foreach($property in $inventory.PSObject.Properties) {
+            $name=$property.Name
+            if($name -match '[\\:\x00-\x1f]' -or $name.StartsWith('/') -or @($name.Split('/') | Where-Object {$_ -in @('','.','..')}).Count -or [IO.Path]::GetExtension($name) -notin @('.md','.png','.jpg','.txt') -or $property.Value -notmatch '^[a-f0-9]{64}$') { throw 'Unsafe documentation inventory; nothing pushed.' }
+            $safeTracked+='docs/'+$name
+        }
+    }
+    $tracked=@(& git -C $RepositoryRoot ls-files)
+    if($LASTEXITCODE -ne 0 -or @($tracked | Where-Object {$_ -notin $safeTracked}).Count) { throw 'Unexpected tracked files; nothing pushed.' }
+    $staged=@(& git -C $RepositoryRoot diff --cached --name-only)
+    if($LASTEXITCODE -ne 0 -or @($staged | Where-Object {$_ -notin $metadataFiles}).Count) { throw 'Unrelated staged changes; publish metadata separately.' }
+}
+if($Publish) { Assert-PublishCheckout $PSScriptRoot }
+
 Add-Type -AssemblyName System.Security.Cryptography.ProtectedData
 $keyPath=Join-Path ([Environment]::GetFolderPath('LocalApplicationData')) 'DataCraftPublisher\Keys\updates-20261024.dpapi'
 if (-not (Test-Path -LiteralPath $keyPath)) { throw 'Publisher signing key missing; it never belongs in this repository or commercial packages.' }
@@ -48,11 +71,7 @@ if ($LASTEXITCODE -ne 0) { throw 'Independent notice signature verification fail
 if ($LASTEXITCODE -ne 0) { throw 'Independent artifact signature verification failed. Nothing pushed.' }
 Write-Output 'Signed public metadata prepared. No commercial content, customer data or private key is included.'
 if ($Publish) {
-    $allowed=@('README.md','releases.json','updates-v2.json','latest.json','artifacts.json','artifacts-v1.json','prepare-artifacts.py','publisher-public-key.json','publisher-public-key.pem','Publish-Updates.ps1','Backup-SigningKey.ps1','build-channel.py','.gitignore','.github/workflows/validate.yml')
-    $remote=& git -C $PSScriptRoot remote get-url origin
-    if ($LASTEXITCODE -ne 0 -or $remote.Trim() -ne 'https://github.com/Albjav12345/datacraft-updates.git') { throw 'Unexpected metadata repository remote.' }
-    $tracked=@(& git -C $PSScriptRoot ls-files)
-    if (@($tracked | Where-Object {$_ -notin $allowed}).Count) { throw 'Unexpected tracked files; nothing pushed.' }
+    $allowed=$metadataFiles
     & git -C $PSScriptRoot add -- @allowed
     if ($LASTEXITCODE -ne 0) { throw 'Could not stage metadata.' }
     & git -C $PSScriptRoot commit -m 'Publish DataCraft signed notices and authorized artifact metadata'
