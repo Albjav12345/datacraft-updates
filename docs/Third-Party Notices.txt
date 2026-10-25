@@ -1,0 +1,33 @@
+DataCraft - Third-Party Notices
+
+Inter font
+Copyright 2020 The Inter Project Authors (https://github.com/rsms/inter)
+License: SIL Open Font License 1.1.
+Included in Samples~/Emberfall/Fonts, Samples~/WeatherStation/Fonts and Samples~/Sunlight/Fonts.
+The complete license is included as OFL.txt beside each font and retained when samples install.
+In the Assets delivery, these files are visible under Samples. UPM keeps the optional Samples~ layout.
+
+Chakra Petch wordmark
+Copyright 2018 The Chakra Petch Project Authors (https://github.com/m4rc1e/Chakra-Petch.git)
+License: SIL Open Font License 1.1.
+The DataCraft wordmark uses outlined Chakra Petch Bold glyphs; its artwork is a document derived from the font.
+Complete license: Documentation~/Branding/ChakraPetch-OFL.txt (Documentation/Branding in the Assets delivery).
+
+Unity Newtonsoft JSON package
+Required dependency: com.unity.nuget.newtonsoft-json 3.2.2, resolved separately through Unity Package Manager.
+DataCraft does not redistribute that package's DLLs in its own delivery.
+Retain its upstream Newtonsoft/Unity notices supplied with the dependency.
+Source: https://docs.unity3d.com/Packages/com.unity.nuget.newtonsoft-json@3.2/manual/index.html
+
+External data services (not an included subscription or licence grant)
+Stratus and the Weather example can explicitly request Open-Meteo data.
+Data attribution: Open-Meteo / CC BY 4.0. The free API is for non-commercial use; commercial products/promotions need an appropriate provider plan.
+Terms: https://open-meteo.com/en/terms
+Helio includes visible Sunrise-Sunset.org credit and link as required by the provider.
+Terms/documentation: https://sunrise-sunset.org/api
+All three samples start from labelled local/synthetic data; service availability is not guaranteed.
+
+Original-content provenance
+Sample READMEs describe the procedural geometry/effects implemented by sample code. The publisher confirmed on 2026-10-21 that models, textures, sounds and the logo contain no third-party resources apart from the credited OFL fonts.
+Legacy unreferenced icons and superseded logos are omitted from the release artifact. Brand-concept and development AI assistance is recorded in the publisher listing draft for review.
+Unity trademarks and Unity-provided resources remain their respective owners' property.
