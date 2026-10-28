@@ -20,7 +20,7 @@ Test values stay in memory. Inspect status, response size and errors. Cancellati
 
 ## 3. Review the C# client
 
-On **C# client**, inspect inferred names/types and generate the DTO/static client to your game's chosen scripts folder. A single sample cannot prove every nullable/optional/polymorphic provider case. Check the provider's full schema and compile before use. Lists/dictionaries, nested objects, properties and JSON.NET attributes belong to this ordinary-JSON mapping workflow.
+On **C# client**, enter a unique client name starting with A–Z (except the reserved method name `FetchAsync`) and choose **Preview C#**. Inspect the inferred names/types, then choose **Create C# files**. The client is written to `Assets/DataCraftApi/Generated/YourClient.cs`; **Include a gameplay component** also writes `Assets/DataCraftApi/Examples/YourClientGameplay.cs`. These destinations are automatic. Existing files/types are never overwritten: choose a new client name when generating a revised contract, then update your game references deliberately. A single sample cannot prove every nullable/optional/polymorphic provider case. Check the provider's full schema and compile before use. Lists/dictionaries, nested objects, properties and JSON.NET attributes belong to this ordinary-JSON mapping workflow.
 
 ![Formatted response preview](Screenshots/ux-api-response-formatted.jpg)
 
@@ -30,7 +30,7 @@ Use `JsonProperty` for differing names and `Required.Always` only for genuinely 
 
 ## 4. Use it in your game
 
-On **Use in your game**, review/generate the optional MonoBehaviour, attach it to an object and assign the saved endpoint. A generated static client is not a component. Invoke Fetch explicitly and adapt `ApplyResponse` to your game's behavior. Stratus and Helio show complete examples with loading, failure and cancellation feedback.
+On **Use in your game**, review/generate the optional MonoBehaviour, attach it to an object and assign the saved endpoint. A generated static client is not a component. Invoke Fetch explicitly and adapt `ApplyResponse` to your game's behavior. Supply credentials through `SetHeaders` / `SetParameters` at runtime. A placeholder used in a recognized credential query (such as `api_key={value}`) is excluded from serialized Inspector fields even when its name is generic. Stratus and Helio show complete examples with loading, failure and cancellation feedback.
 
 For a direct integration, `DataCraftApi.GetAsync<T>` performs a typed GET; `DataCraftApi.SendAsync<T>` accepts an explicit request; `endpoint.SendAsync<T>` applies saved configuration and its response path. [API reference](ApiReference.md) lists the entry points.
 

@@ -4,6 +4,8 @@
 
 **Design game data, save player progress and use JSON APIs in Unity.**
 
+**Version 1.2.1 — documentation and reliability.** Clearer first steps, stricter import validation and safer generated C# code. [Read the changelog](CHANGELOG.md). Store availability follows the announcements for your purchase edition.
+
 DataCraft brings these workflows into one Editor workspace. Define typed templates and instances, publish a read-only catalog for gameplay, save mutable progress locally, or turn an HTTP JSON response into reviewed C# code.
 
 **Start with [Installation](INSTALLATION.md), then follow [Your first game data](guides/UserGuide.md).** Open **Tools → DataCraft → Open DataCraft** after installation. The **Help** tab is searchable and works offline.

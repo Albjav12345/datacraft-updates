@@ -18,7 +18,7 @@ Player save files use a separate envelope. Do not import them as template packag
 
 Choose a local JSON array of flat objects or comma-delimited CSV with a header. Review the inferred fields, names, types, Required/default options, metadata and instance naming. Choose template only or template plus rows before confirming.
 
-Inference covers String, Integer, Float and Boolean. It does not invent Enum, List or reference schemas. Keep leading-zero identifiers and ambiguous columns as String. Acquisition limits are 8 MiB, 10,000 rows and 128 columns; unsupported nested values are not silently flattened.
+Inference covers String, Integer, Float and Boolean. It does not invent Enum, List or reference schemas. Keep leading-zero identifiers and ambiguous columns as String. Acquisition limits are 8 MiB, 10,000 rows and 128 columns; unsupported nested values are not silently flattened. Files must contain valid UTF-8; JSON Unicode escapes need four hexadecimal digits and paired surrogates. Malformed text is rejected before import, including in ignored JSON branches.
 
 ## Import rows into a template
 
@@ -47,6 +47,7 @@ Map `@instance` to Instance name. It is a display name, not a stable ID. Map `na
 
 - JSON missing/null mapped values become unset. Unmapped fields follow the applicable new/existing-instance policy.
 - In DataCraft CSV, an unquoted empty cell is unset; quoted empty String `""` is explicitly empty. Spreadsheet software can normalize quoting: inspect the actual preview after re-saving.
+- Integer-to-Float JSON mapping requires an exactly representable value (for example `16777216` is valid; `16777217` is rejected). Decimal/exponent Float values use finite 32-bit precision; values that underflow to zero are rejected.
 - Enum values use exact, case-sensitive option **names**, not numeric codes.
 - References use exact names of destination instances already present in the chosen target template; raw GUIDs and missing destinations are rejected.
 - Lists use JSON arrays. In CSV the array is held in one correctly quoted cell. No nested lists or null elements.

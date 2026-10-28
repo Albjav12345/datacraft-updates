@@ -2,7 +2,7 @@
 
 [Documentation home](index.md) · [First catalog walkthrough](UserGuide.md)
 
-Open **Tools → DataCraft → Samples and Quick Start**, or **Explore demos** on Overview. Select an example and follow its install/open action. Package Manager also exposes the sample sources; do not import multiple copies through different routes.
+Open **Tools → DataCraft → Samples and Quick Start**, or **Explore demos** on Overview. Stop Play Mode, select an example and follow its install/open action. Package Manager also exposes the sample sources; do not import multiple copies through different routes.
 
 Core installation does not copy examples into Assets. Samples do not change project input, renderer or build settings automatically, and do not replace your templates/output. Back up modifications before importing another copy with shared GUIDs.
 

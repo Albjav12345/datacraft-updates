@@ -9,8 +9,8 @@ The tool package, Editor source data, generated gameplay data and player saves h
 | Template definitions | `ProjectSettings/DataCraftTemplates.asset` | Version/control or back up as project authoring |
 | Instance drafts | `ProjectSettings/DataCraftInstances.json` | Keep with the matching templates |
 | Saved mappings | Project-local mapping configuration shown in Designer | Keep with authoring; it is not source rows or credentials |
-| Generated catalog/shards and optional C# IDs | Your chosen game-owned location under `Assets` | Preserve GUIDs/references; refresh explicitly in Project Data |
-| API endpoints and generated game code | Your chosen game-owned assets/scripts | Back up and review as game code |
+| Generated catalog/shards and optional C# IDs | `Assets/DataCraftGenerated/ProjectData` (`Shards` and `Code` subfolders) | Preserve GUIDs/references; refresh explicitly in Project Data |
+| API endpoints and generated game code | Endpoint: chosen asset under `Assets`; client: `Assets/DataCraftApi/Generated`; component: `Assets/DataCraftApi/Examples` | Back up and review as game code |
 | Runtime/player saves | `Application.persistentDataPath/DataCraft` | Back up independently; Editor/device/Player paths may differ |
 | Original Files edit backups | `.backups` under the local save folder | Exact pre-edit bytes; no automatic pruning/restore |
 | Schema migration backups | `ProjectSettings/DataCraftMigrationBackups` | Preserve before manual recovery |

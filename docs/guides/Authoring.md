@@ -16,7 +16,7 @@ Create a blank template with **+** or the empty-state action. Edit its name, cat
 
 ## Define fields
 
-Use unique C#-style names: ASCII letter/underscore first, then letters, digits or underscores. Names are unique ignoring case; reserved C# keywords are rejected. Field IDs stay stable when a name changes.
+Use unique C#-style names: ASCII letter/underscore first, then letters, digits or underscores. Names are unique ignoring case; reserved C# keywords, including the special `__arglist`/`__makeref`/`__reftype`/`__refvalue` forms, are rejected. Field IDs stay stable when a name changes.
 
 | Type | Values and rules |
 | --- | --- |
@@ -28,11 +28,11 @@ Use unique C#-style names: ASCII letter/underscore first, then letters, digits o
 | Template Reference | Stable link to an instance of the chosen target template |
 | List | One ordered level of a supported scalar/Enum/reference type |
 
-**Use default value** stores a default; it does not make a field Required. **Required when creating an instance** adds draft validation. Required lists need at least one element. Defaults are copied for new bindings/instances; changing a default does not rewrite existing values.
+**Use default value** stores a default; it does not make a field Required. **Required when creating an instance** adds draft validation. Required Strings cannot be empty or whitespace-only. Required lists need at least one element. Defaults are copied for new bindings/instances; changing a default does not rewrite existing values.
 
 ### Enum options
 
-Add named options, then choose a default if needed. Renaming/reordering preserves each option's numeric code. **Edit codes (advanced)** exposes numeric editing; use deliberate stable codes for game C# Enums. Removing an option leaves affected values unresolved until corrected. There are at most 128 options, paged eight at a time.
+Add named options, then choose a default if needed. Renaming/reordering preserves each option's numeric code. **Edit codes (advanced)** exposes numeric editing; use deliberate stable codes for game C# Enums. Removing an option leaves affected values unresolved until corrected. The name `value__` is reserved by C# for Enum storage and cannot be an option. There are at most 128 options, paged eight at a time.
 
 ### Lists and references
 

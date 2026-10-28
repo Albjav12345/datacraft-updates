@@ -11,11 +11,11 @@ Project Data turns validated Editor drafts into a **read-only runtime snapshot**
 | State | Next step |
 | --- | --- |
 | Blocking errors | Open the reported template/instance and correct the issue |
-| Ready, not exported | Choose an output destination under your game's `Assets` |
+| Ready, not exported | Choose **Update Generated Output** or **Export Project Data** in Output options |
 | Update needed | Choose **Update Generated Output** after reviewing drafts |
 | Up to date | Assign/use the current catalog in game code |
 
-Warnings/information remain reviewable. Errors block the project-wide export; no partial replacement is published. **Output options · Catalog & C# IDs** contains the independent output actions. C# IDs generate constants for real authored identities, not DTO or Enum declarations.
+Warnings/information remain reviewable. Errors block the project-wide export; no partial replacement is published. **Output options · Catalog & C# IDs** contains the independent output actions. The workspace writes the catalog to `Assets/DataCraftGenerated/ProjectData/DataCraftProjectCatalog.asset`, shards to its `Shards` folder and optional C# IDs to its `Code` folder. It does not prompt for a destination. **Select catalog** locates the created asset. Keep these generated files and their `.meta` files together; the workspace and build preflight inspect this location. C# IDs generate constants for real authored identities, not DTO or Enum declarations. Names that collide after conversion to C# symbols (including a template and its instance having the same name) receive stable ID suffixes; use the generated symbol rather than guessing it.
 
 ## Match your C# data to the schema
 

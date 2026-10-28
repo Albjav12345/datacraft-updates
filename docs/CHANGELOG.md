@@ -1,14 +1,34 @@
 # Changelog
 
-## Unreleased — documentation refresh
+## Unreleased
 
-- Customer-first README, guided first catalog and task-based user manual with current real screenshots.
-- Expanded API, import/export, recovery, data-location, update and troubleshooting guides.
-- Offline customer documentation separated from development reports, roadmap and contribution instructions.
-- Public documentation links and a reproducible documentation-only mirror.
-- Corrected stale optional-example instructions.
+No changes recorded after 1.2.1.
 
-Documentation preparation for a future package. Existing 1.2.0 deliveries/submission remain unchanged; no new version or store availability is announced here.
+## 1.2.1 — Documentation and reliability · 2026-10-28
+
+Package prepared for itch.io and a later Unity Asset Store submission. Availability is announced separately by each purchase store; a prepared package is not an approved download.
+
+### Documentation
+
+- Reorganized the README and offline Help around the tasks a new user needs: first catalog, authoring, imports/exports, player saves and HTTP APIs.
+- Added a step-by-step first-catalog walkthrough, clearer expected results, data locations, recovery guidance and current real Unity screenshots.
+- Expanded API, transfer, update and troubleshooting guides; corrected optional-example instructions and automatic output paths for Project Data and generated API code.
+- Separated customer guides from maintainer reports and made the public documentation mirror reproducible and self-contained.
+
+### Fixes
+
+- Accept exactly representable large integer values in Float imports and preserve them in Float-list/template transfer round trips.
+- Avoid generated instance ID constants colliding with their enclosing template class, including when a template and instance share a name.
+- Reject special C# field keywords, the reserved Enum option `value__`, and the API client name `FetchAsync` before they produce invalid generated code.
+- Reject malformed JSON Unicode escapes and unmatched surrogate pairs consistently in authoring imports.
+- Prevent installing/opening Stratus during Play Mode before copying files or replacing the scene.
+
+### Generated credential handling
+
+- Detect sensitive API-key/token query names even when their placeholder uses a generic alias, so generated gameplay components do not expose these values as serialized Inspector fields. Supply credentials at runtime.
+- If an earlier generated component serialized a credential, remove that value from project assets/history as appropriate and rotate the credential if it was shared. This fix does not automatically rewrite existing generated scripts.
+
+Runtime APIs, existing IDs and serialized save/catalog formats are unchanged. Existing projects do not require a data migration. Back up before updating and regenerate affected ID/API code when relevant. Optional examples retain their documented additional requirements.
 
 ## 1.2.0 — Updates through your purchase store
 

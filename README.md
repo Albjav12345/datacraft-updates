@@ -2,6 +2,8 @@
 
 **Design game data, save player progress and use JSON APIs in Unity.**
 
+**DataCraft 1.2.1 — documentation and reliability:** the next package is prepared with the corrections listed in the [changelog](docs/CHANGELOG.md). itch.io and Unity Asset Store availability are announced separately after each exact file is downloadable.
+
 [Start here: user documentation](docs/guides/index.md) · [Installation](docs/INSTALLATION.md) · [Release notes](docs/CHANGELOG.md) · [Support](docs/SUPPORT.md)
 
 ![DataCraft workspace](docs/guides/Screenshots/ux-overview-wide.jpg)
@@ -21,7 +23,7 @@
 
 ## Documentation and downloads
 
-These public guides cover the DataCraft 1.2 workflow and receive documentation corrections independently of package releases. The package includes an offline guide for its installed version; later work is labelled **Unreleased** in the changelog. Real Unity screenshots use example projects; names/counts are not automatically installed content.
+These public guides cover the DataCraft 1.2.1 workflow and receive documentation corrections independently of package releases. The package includes an offline guide for its installed version; later work is labelled **Unreleased** in the changelog. Real Unity screenshots use example projects; names/counts are not automatically installed content.
 
 This repository contains user documentation, public signed release metadata and publisher tools. It contains **no commercial package source, customer data or downloadable asset archive**. Obtain the asset/update through your purchase store. Retail editions follow their own store's entitlement and availability; a pending Unity review is not an approved downloadable release.
 

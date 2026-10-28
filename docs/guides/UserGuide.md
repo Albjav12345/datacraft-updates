@@ -29,7 +29,7 @@ Enable **Set value** where needed. Zero, false, empty text and unset are distinc
 
 ## 3. Publish the catalog
 
-Open **Project Data**. Review any validation issues and choose **Update Generated Output**, or the initial export action under **Output options · Catalog & C# IDs**. Select a game-owned output location under `Assets` when prompted.
+Open **Project Data**. Review any validation issues and choose **Update Generated Output**, or the initial export action under **Output options · Catalog & C# IDs**. The workspace writes to **`Assets/DataCraftGenerated/ProjectData`** automatically; there is no destination dialog. Wait for the export to finish. Expand **Output options · Catalog & C# IDs** and choose **Select catalog**, or find `DataCraftProjectCatalog.asset` in that folder in the Project window.
 
 ![Readiness, validation and explicit output update](Screenshots/ux-project-data-wide.jpg)
 
@@ -39,7 +39,7 @@ Select the generated `DataCraftProjectCatalog` asset. In Designer use **Actions 
 
 ## 4. Read the weapon in Play Mode
 
-Create `WeaponReader.cs` in your game's scripts, add this component to a scene object, assign the generated catalog and paste the two copied IDs into the Inspector.
+In the Project window create `Assets/Game/WeaponReader.cs` (create the `Game` folder if needed), replace its contents with the following code and wait for compilation. In the Hierarchy create an empty GameObject and add **WeaponReader** with **Add Component**. Drag `Assets/DataCraftGenerated/ProjectData/DataCraftProjectCatalog.asset` into its **Catalog** field, then paste the copied Weapon and Iron Sword IDs into **Template Id** and **Instance Id**.
 
 ```csharp
 using System;
