@@ -6,7 +6,7 @@ No changes recorded after 1.2.1.
 
 ## 1.2.1 — Documentation and reliability · 2026-10-28
 
-Package prepared for itch.io and a later Unity Asset Store submission. Availability is announced separately by each purchase store; a prepared package is not an approved download.
+Published on itch.io on 2026-10-28. Unity Asset Store availability follows its separate review; this release is not announced as available there.
 
 ### Documentation
 

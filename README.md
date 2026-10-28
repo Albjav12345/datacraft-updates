@@ -2,7 +2,7 @@
 
 **Design game data, save player progress and use JSON APIs in Unity.**
 
-**DataCraft 1.2.1 — documentation and reliability:** the next package is prepared with the corrections listed in the [changelog](docs/CHANGELOG.md). itch.io and Unity Asset Store availability are announced separately after each exact file is downloadable.
+**DataCraft 1.2.1 — documentation and reliability is available on itch.io.** See the [changelog](docs/CHANGELOG.md) for the fixes. The official download was verified and announced in the signed channel on 2026-10-28. Unity Asset Store availability remains pending its separate review.
 
 [Start here: user documentation](docs/guides/index.md) · [Installation](docs/INSTALLATION.md) · [Release notes](docs/CHANGELOG.md) · [Support](docs/SUPPORT.md)
 
