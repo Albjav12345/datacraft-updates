@@ -2,6 +2,27 @@
   "packageName": "dev.amedina.datacraft",
   "releases": [
     {
+      "version": "1.2.1",
+      "minimumUnity": "6000.0.85f1",
+      "publishedAtUtc": "2026-10-28T09:05:23Z",
+      "kind": "fixes",
+      "importance": "recommended",
+      "summary": "Clearer first steps, stricter import validation and safer generated C# code.",
+      "changes": [
+        "Task-based customer documentation, first-catalog walkthrough and current real Unity screenshots.",
+        "Fix exact large Float transfers, generated ID/name collisions, reserved C#/Enum/API names and malformed JSON Unicode.",
+        "Keep sensitive query aliases out of generated serialized Inspector fields. Review/regenerate existing code and rotate credentials if stored and shared.",
+        "Block Stratus installation during Play Mode. Runtime APIs, existing IDs and serialized formats remain compatible."
+      ],
+      "affectsFrom": "1.1.1",
+      "affectsBefore": "1.2.1",
+      "mitigation": "Review or regenerate affected ID/API code. If a credential was serialized and shared, remove it and rotate it with its provider.",
+      "stores": {
+        "itch": true,
+        "assetStore": false
+      }
+    },
+    {
       "version": "1.2.0",
       "minimumUnity": "6000.0.85f1",
       "publishedAtUtc": "2026-10-25T14:47:36Z",
