@@ -46,6 +46,26 @@ Choose **Instances → Create**, enter a unique instance name, then expand its r
 
 Validation stays next to the affected values. You can retain incomplete drafts, but blocking errors prevent Project Data export. Bind a newly added field explicitly; a removed field's old binding remains stored until explicitly removed.
 
+## Compare values in Table
+
+Under **Instances**, choose **View → Table**. Cards remains available for full field descriptions, list-element editors and resolving changed field bindings. Table shows eight instances per page and one to three fields at a time, according to panel width; **Fields →** changes the visible columns without horizontal page scrolling. Narrow panels stack each row's fields under its identity. Each row shows its readiness and **Open in Cards**.
+
+Names and text values commit with Enter or a focus change. **Set value** controls presence separately from a Boolean's **True** value; empty String, false and unset are distinct. Enums and references use their existing selectors. Table List values are complete JSON arrays; Cards offers the element editor. Numeric values use invariant notation (`1.5`). Invalid/incomplete drafts remain visible and still block export. Schema-changed bindings require resolution in Cards first.
+
+**Order → Name A–Z / Name Z–A** sorts the view only; it does not reorder authored output. Clear the filter and use Cards to change authored ordering.
+
+## Review a selected-row bulk edit
+
+1. Select individual table rows, **Select page**, or **Select all results**. Selection can span pages; the count includes selected rows on other pages. Changing the search clears the selection. **Clear selection** starts again. A batch supports at most **1,024** explicitly selected instances of the current template.
+2. Under **Edit selected instances**, choose one **Field** and **Set value** or **Unset value**. Enter/select the value and commit text with Enter or focus change.
+3. **Preview selected changes** writes nothing. Review the total changed/selected counts, before/after values and rows that still block export. Review pages contain every selected row, twelve per page. Long values are abbreviated; hover for the full before/after value or inspect the instance in Cards.
+4. **Apply reviewed changes** writes the reviewed draft batch as **one Unity Undo step**. It keeps IDs, instance names/order, other bindings and unselected rows. Setting a value on a newly added field explicitly binds that field. Changed binding types/targets must be resolved in Cards first.
+5. Validate and explicitly update **Project Data** when ready. Draft edits, including Undo/Redo, do not publish the game's catalog.
+
+Changing the selection, field, action or value discards the review. Changes to the schema, saved template file, draft graph or draft file make an old plan invalid; preview again. Invalid values for the edited field are rejected. Explicitly unsetting a Required field is allowed as an incomplete draft and is labelled as blocking export; existing unrelated errors remain visible. A no-change preview cannot be applied. Failed writes preserve the previous in-memory draft batch and report the reason.
+
+See the [guided Catalog Starter](../examples/CatalogStarter/README.md) for a playable example of these steps.
+
 ## Review an existing schema change
 
 1. Select the template and choose **Actions → Review schema changes**.
@@ -58,6 +78,20 @@ Original draft bytes are retained under `ProjectSettings/DataCraftMigrationBacku
 
 ## Saving, Undo and recovery
 
-Ordinary template edits use Unity Undo/Redo in the current Editor session. Instance edits, imports, generated output and player saves are outside that history. Imports reset template history to avoid undoing only half of a two-store import.
+Ordinary template and committed instance edits use Unity's native **Edit → Undo/Redo** in the current workspace session. Instance history covers create, edit/set/unset/bind/remove values, rename, duplicate, reorder, delete, instance-only import/update, draft schema review and table/bulk changes. **Undo / Redo** in the Instances toolbar uses the same global Unity history, which may also contain template, Inspector and scene edits. A focused text field can undo its uncommitted text first.
+
+Instance history is scoped to the open workspace and is cleared on close or script reload. Template/library imports rebase the instance and template history so Undo cannot remove only half of a two-store import. Schema changes invalidate incompatible instance history; an unsafe Undo/Redo reports why and preserves current drafts. A saved draft file changed externally is not overwritten: reopen the workspace after reviewing the external changes. A read-only/failed write rolls back the in-memory mutation. Generated output, model/ID source files, endpoint assets, player saves and Files actions remain outside this instance history. Undo is not a durable backup or a crash journal; template recovery below is a separate feature.
 
 If an ordinary template save fails, editing pauses and offers **Retry edit**, **Export recovery**, **Discard edit** and **Reload from disk**. Preserve a recovery export before closing when the journal cannot be written. Do not delete `Library` while template recovery is unresolved. See [Data locations and backups](DataAndBackups.md).
+
+## Table and review in Unity
+
+![Instance Table in a wide workspace](Screenshots/table-authoring-wide.jpg)
+
+[Table in a narrow dock](Screenshots/table-authoring-docked.jpg). Fields page without horizontal workspace scrolling.
+
+![Frozen before/after bulk review](Screenshots/bulk-review-wide.jpg)
+
+[Bulk review in a narrow dock](Screenshots/bulk-review-docked.jpg). Preview writes nothing; Apply is one native Undo step.
+
+The searchable offline guide covers the same rules: [wide Help](Screenshots/table-help-wide.jpg), [docked Help](Screenshots/table-help-docked.jpg).

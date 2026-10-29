@@ -23,7 +23,7 @@
 
 ## Documentation and downloads
 
-These public guides include the prepared **DataCraft 1.3.0** models/Inspector workflow. **1.3.0 is not yet announced as downloadable in a store.** Customers with 1.2.1 should use their included offline manual or update when their store offers it. Documentation and store downloads follow separate publication schedules. Real Unity screenshots use example projects; names/counts are not automatically installed content.
+These public guides cover prepared **DataCraft 1.4.0**: Table/bulk editing, native instance Undo/Redo, the guided Catalog Starter and the models/Inspector improvements from the internal 1.3 milestone. **1.4.0 is not yet announced as downloadable in a store.** Customers with 1.2.1 should use their included offline manual or update when their store offers it. Documentation and store downloads follow separate publication schedules. Real Unity screenshots use example projects; names/counts are not automatically installed content.
 
 This repository contains user documentation, public signed release metadata and publisher tools. It contains **no commercial package source, customer data or downloadable asset archive**. Obtain the asset/update through your purchase store. Retail editions follow their own store's entitlement and availability; a pending Unity review is not an approved downloadable release.
 
@@ -32,3 +32,5 @@ This repository contains user documentation, public signed release metadata and 
 Questions, bugs or feedback: **[amedina.amg.dev@gmail.com](mailto:amedina.amg.dev@gmail.com)**.
 
 Publisher maintenance is documented separately in [PUBLISHING.md](PUBLISHING.md). Documentation-only commits do not change signed notices or announce a new package.
+
+Prepared 1.4 devlog text: [English](docs/devlogs/DEVLOG-ITCH-1.4.0.md) · [Español](docs/devlogs/DEVLOG-ITCH-1.4.0-ES.md). These notes do not change signed store availability.

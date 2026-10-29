@@ -2,9 +2,20 @@
 
 ## Unreleased
 
+## 1.4.0 — Table authoring, native Undo and a guided first catalog · 2026-10-29
+
+Prepared for release. Download availability follows each store independently. Includes the catalog models, Inspector references and bounded update history from the internal 1.3 milestone.
+
+- Add a responsive instance Table alongside Cards: eight rows per page, width-dependent field columns, inline typed values, readiness, search and view-only name sorting.
+- Add explicit selected-row bulk editing of one field with a frozen paginated before/after review, stale-plan checks and atomic apply. Preserve IDs/order/other fields; allow incomplete drafts with clear export blockers.
+- Add native Unity Undo/Redo for committed instance edits, instance-only imports/updates, draft schema review and one-step bulk changes. Scope history to the open workspace and clear incompatible snapshots safely after schema changes or coordinated imports.
+- Protect ordinary instance writes from external file replacements/read-only failures, restoring in-memory data and showing actionable feedback in Cards and Table.
+- Add the offline Catalog Starter firing range, a guided table → bulk → Undo/Redo → publish → gameplay path and a concrete typed-code explanation. Uses UI Toolkit and the core JSON dependency, with no renderer/input/network requirement.
+- Expand Authoring, Examples, README and offline Help to explain selection scope, draft/publication boundaries, history lifetime and the guided sample.
+
 ## 1.3.0 — Typed catalog models and Inspector references · 2026-10-29
 
-Prepared for release. Download availability follows each store independently.
+Internal prepared milestone; its features are included in 1.4.0. Store availability is separate.
 
 - Keep catalog/ID/model output labels visible in compact Project Data layouts, and stack narrow output buttons at a consistent height.
 

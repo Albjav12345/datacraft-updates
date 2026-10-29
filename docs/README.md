@@ -14,7 +14,7 @@ DataCraft brings these workflows into one Editor workspace. Define typed templat
 
 *Overview connects the main workflows. Screenshots show example projects, not data automatically added to yours. Click an image to view it at full size.*
 
-For example, define a Weapon template once, generate `WeaponData`, then select Iron Sword on a component and read its damage in gameplay. You maintain the template fields; DataCraft keeps the reviewed C# model in step with that schema. Existing manual DTOs remain supported. Version 1.3.0 is prepared for release; check your store for actual download availability.
+For example, define a Weapon template once, generate `WeaponData`, then select Iron Sword on a component and read its damage in gameplay. You maintain the template fields; DataCraft keeps the reviewed C# model in step with that schema. Existing manual DTOs remain supported. Version 1.4.0 is in final preparation; check your store for actual download availability. The new table edits existing instance drafts, reviewed batches change one field on selected rows, and committed instance edits use Unity Undo/Redo. The guided Catalog Starter shows the complete edit → publish → gameplay path.
 
 ## Choose your workflow
 
@@ -41,12 +41,12 @@ Editing a draft does not update a built game's catalog. Loading a player save do
 ## Included workflows
 
 - Typed fields: String, Integer, Float, Boolean, Enum, ordered List and Template Reference.
-- Instance validation, explicit unset/default values and reviewed Editor schema changes.
+- Cards or paginated table editing, selected-row bulk previews, native instance Undo/Redo, validation, explicit unset/default values and reviewed Editor schema changes.
 - JSON/CSV row transfer, saved mappings, keyed updates and portable template libraries.
 - Generated Project Data catalogs, stable IDs, optional C# ID constants, reviewed C# models/Enums, Inspector reference selection and build preflight.
 - Build-safe local Save/Load; local file inspection and reviewed edits with original backups.
 - HTTP JSON requests, saved endpoints, DTO/client previews and optional gameplay generation.
-- Optional project-local Codex/Claude Code instructions and three playable examples.
+- Optional project-local Codex/Claude Code instructions and four playable examples, including an offline guided first catalog.
 - Edition-specific update information and searchable offline Help.
 
 ## Requirements and documentation

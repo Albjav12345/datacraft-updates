@@ -8,9 +8,14 @@ Core installation does not copy examples into Assets. Samples do not change proj
 
 | Example | Learn | Additional requirements | Full walkthrough |
 | --- | --- | --- | --- |
+| **Catalog Starter** | Guided first catalog → table/bulk review → Undo/Redo → publish → playable firing range | UI Toolkit and core JSON only; fully offline | [Catalog Starter guide](../examples/CatalogStarter/README.md) |
 | **Emberfall** | Catalog equipment, Enum/tags, Enemy → Weapon links and a local Save/Spend/Load checkpoint | Universal RP, Unity UI and Input System | [Emberfall guide](../examples/Emberfall/README.md) |
 | **Stratus** | Weather JSON → DTO → a miniature observatory and graph | UI Toolkit; no Emberfall renderer/input requirements | [Stratus guide](../examples/WeatherStation/README.md) |
 | **Helio** | Solar-event JSON → validated DTO → illustrative light/time preview | UI Toolkit | [Helio guide](../examples/Sunlight/README.md) |
+
+## Start with the guided firing range
+
+Catalog Starter is the initial choice in Samples. Install/open it, press Play and compare Swift and Heavy. Then follow its README: import its library with new IDs, bulk-edit damage in Table, try Undo/Redo, explicitly update Project Data and assign your catalog and references to a duplicate scene. One hit then clears a target. The included snapshot and your imported project drafts remain separate. The in-game code explanation shows where typed catalog access replaces manual reading/parsing/ID lookup; your component still implements the game rules.
 
 ## Start with offline data
 
@@ -27,3 +32,13 @@ For API samples, use **Open endpoint in APIs** to inspect their saved request co
 ## Build an example
 
 Keep referenced fonts, PanelSettings, shaders, endpoints and catalog assets. Add the intended scene to the build explicitly. Sample linker descriptors cover sample DTOs, not every game-owned DTO. Test your actual backend/stripping configuration. See [Compatibility](Compatibility.md) for exact tested Editors and the recorded URP limitation.
+
+## Guided Catalog Starter in Unity
+
+![Catalog Starter in Samples and Quick Start](Screenshots/starter-launcher-wide.jpg)
+
+[Compact launcher](Screenshots/starter-launcher-compact.jpg). The three steps distinguish the shipped snapshot, your imported drafts and your published catalog.
+
+![Playable firing range using typed catalog data](Screenshots/starter-game-wide.jpg)
+
+[Game in a narrow dock](Screenshots/starter-game-docked.jpg). The game content scrolls vertically and target controls wrap with the available width.

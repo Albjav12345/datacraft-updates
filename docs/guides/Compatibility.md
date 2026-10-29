@@ -9,13 +9,20 @@ Minimum declared Editor: **Unity 6.0 LTS 6000.0.85f1**. Core UPM installation re
 | Optional example | Additional requirements |
 | --- | --- |
 | Emberfall | Universal RP, Unity UI (uGUI), Input System |
+| Catalog Starter | UI Toolkit and core JSON only; fully offline |
 | Stratus and Helio | UI Toolkit; no Emberfall URP/uGUI/Input System requirement |
 
 Minimum package metadata is not proof that every intervening patch, future Editor, renderer or platform is individually tested.
 
-## 1.3.0 catalog integration checks
+## 1.4.0 authoring checks
 
-The 1.3.0 preparation passed **988/988 core Editor tests** on Windows Unity 6000.5.5f1 with no failures or skips. Checks include compilation of generated classes/Enums, the literal first-catalog guide, freshness/ownership failures, dropdown choice mapping, preview layout at 320–1400 px and a 40-entry bounded release history. A separate private Signal Salvage project exercises generated models in an actual Windows game; it is not a fourth bundled sample. Exact signed-package and Player checks are recorded separately during release verification. These results do not certify every Unity patch or platform.
+The 1.4.0 preparation passed **1,033/1,033 core Editor tests** on Windows Unity **6000.5.5f1**, with zero failures or skips. Coverage includes frozen bulk reviews, all field kinds, 1,024 selected instances, one-step native Undo/Redo, external-file/schema conflicts, review pagination and narrow/wide layouts. The guided Catalog Starter includes a prepared scene and a separate sample snapshot; changes to authoring drafts reach gameplay only after explicit catalog publication and assignment.
+
+Real Editor checks also exercised the table, batch preview/apply and native Ctrl+Z/Ctrl+Y, including exact restoration of the original draft file bytes. Exact signed-package and native Player checks are recorded separately in the release verification. This does not certify Unity 6.6, native macOS/Linux or every minimum-version patch.
+
+## Internal 1.3.0 catalog integration checks
+
+The 1.3.0 preparation passed **988/988 core Editor tests** on Windows Unity 6000.5.5f1 with no failures or skips. Checks include compilation of generated classes/Enums, the literal first-catalog guide, freshness/ownership failures, dropdown choice mapping, preview layout at 320–1400 px and a 40-entry bounded release history. A separate private Signal Salvage project exercises generated models in an actual Windows game; it is not included in the package. Exact signed-package and Player checks are recorded separately during release verification. These results do not certify every Unity patch or platform.
 
 ## 1.2.1 release evidence
 
@@ -40,7 +47,7 @@ The 1.2.0 update client has not been freshly run on the earlier LTS Editors or n
 
 ## Renderer and sample boundaries
 
-All three demos compiled together on Unity 6000.0.85f1 with URP 17.0.4, uGUI 2.0.0 and Input System 1.19.0. Stratus/Helio passed on 6000.3.27f1 without those Emberfall packages. In the tested 6000.3.27f1 installation, bundled URP 17.3.0 lacked converter-script metadata and failed independently of DataCraft; Emberfall is not certified with that combination. This does not certify HDRP or every pipeline/backend.
+The original three demos compiled together on Unity 6000.0.85f1 with URP 17.0.4, uGUI 2.0.0 and Input System 1.19.0. Stratus/Helio passed on 6000.3.27f1 without those Emberfall packages. In the tested 6000.3.27f1 installation, bundled URP 17.3.0 lacked converter-script metadata and failed independently of DataCraft; Emberfall is not certified with that combination. This does not certify HDRP or every pipeline/backend.
 
 ## Shipping checks that belong to your project
 

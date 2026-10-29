@@ -3,7 +3,7 @@ DataCraft - Third-Party Notices
 Inter font
 Copyright 2020 The Inter Project Authors (https://github.com/rsms/inter)
 License: SIL Open Font License 1.1.
-Included in Samples~/Emberfall/Fonts, Samples~/WeatherStation/Fonts and Samples~/Sunlight/Fonts.
+Included in Samples~/Emberfall/Fonts, Samples~/WeatherStation/Fonts, Samples~/Sunlight/Fonts and Samples~/CatalogStarter/Fonts.
 The complete license is included as OFL.txt beside each font and retained when samples install.
 In the Assets delivery, these files are visible under Samples. UPM keeps the optional Samples~ layout.
 
@@ -25,7 +25,7 @@ Data attribution: Open-Meteo / CC BY 4.0. The free API is for non-commercial use
 Terms: https://open-meteo.com/en/terms
 Helio includes visible Sunrise-Sunset.org credit and link as required by the provider.
 Terms/documentation: https://sunrise-sunset.org/api
-All three samples start from labelled local/synthetic data; service availability is not guaranteed.
+The API examples start from labelled local/synthetic data; service availability is not guaranteed. Emberfall and Catalog Starter run offline.
 
 Original-content provenance
 Sample READMEs describe the procedural geometry/effects implemented by sample code. The publisher confirmed on 2026-10-21 that models, textures, sounds and the logo contain no third-party resources apart from the credited OFL fonts.
