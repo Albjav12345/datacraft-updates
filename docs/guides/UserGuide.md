@@ -29,51 +29,42 @@ Enable **Set value** where needed. Zero, false, empty text and unset are distinc
 
 ## 3. Publish the catalog
 
-Open **Project Data**. Review any validation issues and choose **Update Generated Output**, or the initial export action under **Output options · Catalog & C# IDs**. The workspace writes to **`Assets/DataCraftGenerated/ProjectData`** automatically; there is no destination dialog. Wait for the export to finish. Expand **Output options · Catalog & C# IDs** and choose **Select catalog**, or find `DataCraftProjectCatalog.asset` in that folder in the Project window.
+Open **Project Data**. Review any validation issues and choose **Update Generated Output**, or the initial export action under **Output options · Catalog, C# IDs & models**. The workspace writes to **`Assets/DataCraftGenerated/ProjectData`** automatically; there is no destination dialog. Wait for the export to finish. Expand **Output options · Catalog, C# IDs & models** and choose **Select catalog**, or find `DataCraftProjectCatalog.asset` in that folder in the Project window.
 
-![Readiness, validation and explicit output update](Screenshots/ux-project-data-wide.jpg)
+![Project Data output options](Screenshots/models-preview-wide.png)
 
-*Readiness means the drafts can be exported. The output status tells you whether the generated snapshot is current.*
+*The capture shows the separate Signal Salvage example and its model preview. Your walkthrough has only Weapon and two instances. Readiness allows export; output status tells you whether the snapshot is current.*
 
-Select the generated `DataCraftProjectCatalog` asset. In Designer use **Actions → Copy ID** for `Weapon`, and the instance row's **ID** action for `Iron Sword`. Copy the real IDs; do not use names or invent GUIDs.
+## 4. Generate the model and read a weapon in Play Mode
 
-## 4. Read the weapon in Play Mode
+In **Project Data → Output options**, choose **Preview C# models**. The preview must contain `WeaponData` with `string name` and `int damage` (the `@` prefix shown in generated C# escapes field names and does not change their names). Choose **Create / Update models** and wait for compilation. Model generation and the Inspector reference picker are available from DataCraft 1.3.0. If you still have 1.2.1, update first or keep your manually maintained DTOs.
 
-In the Project window create `Assets/Game/WeaponReader.cs` (create the `Game` folder if needed), replace its contents with the following code and wait for compilation. In the Hierarchy create an empty GameObject and add **WeaponReader** with **Add Component**. Drag `Assets/DataCraftGenerated/ProjectData/DataCraftProjectCatalog.asset` into its **Catalog** field, then paste the copied Weapon and Iron Sword IDs into **Template Id** and **Instance Id**.
+Create `Assets/Game/WeaponReader.cs` (create the Game folder if needed), replace its contents with the following code and wait for compilation. Create an empty GameObject and add **WeaponReader**. Assign the generated catalog to **Catalog**, open the **Weapon** reference dropdown, search `Iron Sword` and select the Weapon / Iron Sword row from that catalog. No GUID copying is needed.
 
 ```csharp
-using System;
 using DataCraft;
+using DataCraft.Generated.Models;
 using UnityEngine;
-using UnityEngine.Scripting;
 
 public sealed class WeaponReader : MonoBehaviour
 {
-    [Serializable, Preserve]
-    public sealed class Weapon
-    {
-        [Preserve] public string name;
-        [Preserve] public int damage;
-    }
-
     [SerializeField] private DataCraftProjectCatalog catalog;
-    [SerializeField] private string templateId;
-    [SerializeField] private string instanceId;
+    [SerializeField] private DataCraftTemplateReference weapon;
 
     private void Start()
     {
-        if (catalog == null)
+        if (catalog == null || !weapon.IsSet)
         {
-            Debug.LogError("Assign the generated DataCraft catalog.");
+            Debug.LogError("Assign the DataCraft catalog and select a weapon.");
             return;
         }
-        Weapon weapon = catalog.Get<Weapon>(templateId, instanceId);
-        Debug.Log($"{weapon.name}: {weapon.damage}");
+        WeaponData data = weapon.Resolve<WeaponData>(catalog);
+        Debug.Log($"{data.name}: {data.damage}");
     }
 }
 ```
 
-Press Play. The expected Console message is **`Iron Sword: 15`**. A missing ID or schema mismatch raises a specific lookup error; use the [Project Data guide](ProjectData.md) to diagnose it.
+Press Play. The expected Console message is **`Iron Sword: 15`**. A missing reference or schema mismatch raises a specific lookup error; use the [Project Data guide](ProjectData.md) to diagnose it. If your Game folder belongs to a custom assembly, add references to `DataCraft.Runtime` and `DataCraft.Generated.Models` in its asmdef.
 
 ## 5. Make a change and see the snapshot boundary
 

@@ -61,6 +61,12 @@ String keys match exactly including case and must contain non-whitespace text (a
 
 Reviewed updates preserve matched IDs, order, inbound links and unmapped existing fields. Mapped missing/null values unset the binding. Defaults apply only to newly created instances. Rows absent from the source are never deleted. Saved mappings retain configuration, not credentials or a synchronized source feed.
 
+For a partial update, the mapping summary identifies unmapped required fields as kept on matched rows. If the batch creates new rows, those rows still need their required values; the preview validates the whole batch before applying it.
+
+![Partial keyed update keeps existing required values](Screenshots/partial-update-wide.png)
+
+*The partial Weapon update keeps unmapped fields and validates the matched row before applying. [Narrow docked view](Screenshots/partial-update-docked.png).*
+
 ## Move templates and relationships
 
 Use a **template package** for one template or a **template library** for a linked set. Review metadata, field/value previews, warnings and dependencies. Library search only filters visibility; it does not change selection. Include required templates/destination instances before exporting a reference graph.

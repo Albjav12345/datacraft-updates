@@ -27,6 +27,7 @@ Missing file: `FileNotFoundException`. Wrong root type: `InvalidCastException`. 
 | `catalog.GetAll<T>(string templateId)` | `IReadOnlyList<T>` in saved instance order |
 | `DataCraftTemplateReference.TemplateId / InstanceId / IsSet` | Inspect a stable authored handle |
 | `reference.Resolve<T>(DataCraftProjectCatalog catalog)` | Explicitly resolve that handle |
+| `[DataCraftReferenceTarget(templateId)]` | Optional field attribute restricting Editor Inspector choices; runtime behavior is unchanged |
 
 Lookup errors: `DataCraftProjectDataNotFoundException`, `DataCraftProjectDataFormatException`, `DataCraftProjectDataMappingException`. Reference resolution also rejects an unset handle or null catalog. Read the [DTO mapping contract](ProjectData.md) before adding Enum/list/reference members.
 

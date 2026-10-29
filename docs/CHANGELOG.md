@@ -2,7 +2,31 @@
 
 ## Unreleased
 
-No changes recorded after 1.2.1.
+## 1.3.0 — Typed catalog models and Inspector references · 2026-10-29
+
+Prepared for release. Download availability follows each store independently.
+
+- Keep catalog/ID/model output labels visible in compact Project Data layouts, and stack narrow output buttons at a consistent height.
+
+- Bound the Settings release history to a 320 px reading area with its own vertical scroll and foldout. Long histories no longer stretch the settings page indefinitely.
+
+- Align reference labels and input slots through Unity’s native Inspector field layout instead of calculating a separate IMGUI label column; reference list rows share the normal field column.
+
+- Use Unity’s native object-field styling and a small cyan DataCraft icon for Inspector reference selectors, including list elements and mixed values. Preserve standard prefab override indicators.
+
+- Keep Inspector reference list row labels readable after assignment instead of exposing serialized template IDs.
+- Revoke reviewed model previews when output becomes conflicted, show recovery instructions, and require a fresh preview after recovery. Mark schema-invalidated previews as errors.
+
+- Clarify partial keyed-import mapping summaries: matched rows keep unmapped required values; only newly created rows need those fields supplied. Existing row validation still blocks invalid data.
+
+- Keep generated C# ID/model ownership valid after LF/CRLF conversion by Git or an editor. Content modifications still block overwriting; unchanged generation preserves the original bytes.
+
+- Add optional, schema-based catalog C# model and Enum generation with a read-only preview, explicit creation/update, freshness checks and checksummed ownership protection. Generated partial classes keep exact field names, Enum codes and preserved reflected members; custom code belongs in separate files.
+- Add a searchable Inspector picker for Template References, using exported catalog instances and stable IDs, with explicit clearing, missing-reference feedback, multi-object editing, prefab overrides and Unity Undo. An optional `DataCraftReferenceTarget` attribute restricts Inspector choices to a template; generated reference fields include it.
+- Show stale opted-in models in Project Data/Designer and reject a Player build until those models are reviewed and updated. Catalog/ID updates never silently regenerate model code.
+- Simplify the first-catalog walkthrough to generate models and select a weapon by name in Inspector. Existing manually maintained DTOs and serialized catalog/save formats remain supported.
+
+- Corrected UTF-8 separators in the three Package Manager sample display names. Published 1.2.1 archives remain unchanged.
 
 ## 1.2.1 — Documentation and reliability · 2026-10-28
 

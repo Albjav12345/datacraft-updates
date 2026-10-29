@@ -29,6 +29,12 @@ Remembered sessions use Windows Credential Manager/macOS Keychain where supporte
 
 Manual checks read public publisher-signed release information. Optional **Check automatically once a day** is off by default and runs while the Editor is open; it does not silently install code. **Remind tomorrow** postpones the same notice for 24 hours.
 
+**What's new · release history** opens a bounded reading area (up to 320 px high). Scroll inside it to read older entries, or fold it closed to reach the remaining Settings sections. The outer page and the history have separate vertical scrollbars.
+
+![Bounded release history in Unity](Screenshots/updates-history-wide.png)
+
+*Real Unity capture of the development workspace reading the published 1.2.1 channel. The history layout is part of 1.3.0; this screenshot does not announce 1.3.0 store availability.*
+
 Release history explains changes, feature/fix/security category, normal/recommended/critical importance, affected versions and minimum Unity version. A verification failure or offline/cached result remains labelled; it is not a fresh successful check. Old signed metadata cannot establish current availability indefinitely: check the issue date/store if warned it is stale.
 
 Public metadata checks send no project data, saves, credentials or project paths. itch.io account checks go to itch.io; authorized delivery requests do not receive the OAuth bearer token. Signatures authenticate release/package information; they do not encrypt game JSON or protect a compromised local machine.

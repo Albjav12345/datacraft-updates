@@ -23,7 +23,7 @@
 
 ## Documentation and downloads
 
-These public guides cover the DataCraft 1.2.1 workflow and receive documentation corrections independently of package releases. The package includes an offline guide for its installed version; later work is labelled **Unreleased** in the changelog. Real Unity screenshots use example projects; names/counts are not automatically installed content.
+These public guides include the prepared **DataCraft 1.3.0** models/Inspector workflow. **1.3.0 is not yet announced as downloadable in a store.** Customers with 1.2.1 should use their included offline manual or update when their store offers it. Documentation and store downloads follow separate publication schedules. Real Unity screenshots use example projects; names/counts are not automatically installed content.
 
 This repository contains user documentation, public signed release metadata and publisher tools. It contains **no commercial package source, customer data or downloadable asset archive**. Obtain the asset/update through your purchase store. Retail editions follow their own store's entitlement and availability; a pending Unity review is not an approved downloadable release.
 

@@ -13,7 +13,15 @@ Minimum declared Editor: **Unity 6.0 LTS 6000.0.85f1**. Core UPM installation re
 
 Minimum package metadata is not proof that every intervening patch, future Editor, renderer or platform is individually tested.
 
-## Current 1.2.0 evidence
+## 1.3.0 catalog integration checks
+
+The 1.3.0 preparation passed **988/988 core Editor tests** on Windows Unity 6000.5.5f1 with no failures or skips. Checks include compilation of generated classes/Enums, the literal first-catalog guide, freshness/ownership failures, dropdown choice mapping, preview layout at 320–1400 px and a 40-entry bounded release history. A separate private Signal Salvage project exercises generated models in an actual Windows game; it is not a fourth bundled sample. Exact signed-package and Player checks are recorded separately during release verification. These results do not certify every Unity patch or platform.
+
+## 1.2.1 release evidence
+
+The signed 1.2.1 candidate verification recorded 992 Editor and 35 Play Mode test passes (core plus optional-example suites), isolated consumers for both editions and a High-stripping Windows Mono game run with cold-save recovery. The publisher confirmed the actual itch.io 1.2.0 → 1.2.1 update. These results are separate from the 1.3.0 catalog/model implementation above.
+
+## Historical 1.2.0 evidence
 
 On **Windows Unity 6000.5.5f1**, the 1.2.0 core Editor suite passed **937/937** with zero failures/skips. Additional checks covered retail provider separation, signed metadata, official account/download access, exact authorized archive bytes and signed UPM upgrade/restoration across reload. The authorized live download was the already available 1.1.1 ZIP; the upgrade/restoration used a private future-version fixture. These are distinct checks, not a claim that an unannounced future update was downloaded from a public store.
 
