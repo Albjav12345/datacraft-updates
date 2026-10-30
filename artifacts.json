@@ -2,6 +2,15 @@
   "packageName": "dev.amedina.datacraft",
   "artifacts": [
     {
+      "version": "1.4.0",
+      "store": "itch",
+      "filename": "DataCraft-1.4.0-r2-itch-signed.zip",
+      "bytes": 6631340,
+      "sha256": "dfc92a7b57b3b4a86dd15561f694bd194bf39dc2d60679b016493b2b1b4f0646",
+      "tarballFilename": "dev.amedina.datacraft-1.4.0.tgz",
+      "tarballSha256": "2cfccc58c9a9e93a6d0d01671fa40b19f3b2304c8a096ba00c36b81cd4768f51"
+    },
+    {
       "version": "1.2.1",
       "store": "itch",
       "filename": "DataCraft-1.2.1-itch-signed.zip",

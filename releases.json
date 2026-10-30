@@ -2,6 +2,27 @@
   "packageName": "dev.amedina.datacraft",
   "releases": [
     {
+      "version": "1.4.0",
+      "minimumUnity": "6000.0.85f1",
+      "publishedAtUtc": "2026-10-30T09:42:55Z",
+      "kind": "features",
+      "importance": "normal",
+      "summary": "Review instance data in a polished Table, undo committed changes and follow Catalog Starter from authoring to gameplay.",
+      "changes": [
+        "Responsive Table with quiet icons, descriptive tooltips, grouped navigation and contextual selected-row bulk review.",
+        "Native session-scoped instance Undo/Redo, atomic bulk apply and external draft conflict protection.",
+        "Offline playable Catalog Starter with typed catalog access and explicit publication/assignment walkthrough.",
+        "Reviewed model/Enum generation, native-style Inspector references, bounded update history and refreshed illustrated documentation."
+      ],
+      "affectsFrom": "1.1.1",
+      "affectsBefore": "1.4.0",
+      "mitigation": "Back up before upgrading. Review models explicitly; keep custom partial members separate and update user code after generated type renames.",
+      "stores": {
+        "itch": true,
+        "assetStore": false
+      }
+    },
+    {
       "version": "1.2.1",
       "minimumUnity": "6000.0.85f1",
       "publishedAtUtc": "2026-10-28T09:05:23Z",
