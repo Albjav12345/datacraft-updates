@@ -34,3 +34,5 @@ Questions, bugs or feedback: **[amedina.amg.dev@gmail.com](mailto:amedina.amg.de
 Publisher maintenance is documented separately in [PUBLISHING.md](PUBLISHING.md). Documentation-only commits do not change signed notices or announce a new package.
 
 Prepared 1.4 devlog text: [English](docs/devlogs/DEVLOG-ITCH-1.4.0.md) · [Español](docs/devlogs/DEVLOG-ITCH-1.4.0-ES.md). These notes do not change signed store availability.
+
+Presentation review, 2026-10-30: prepared 1.4.0 documentation now shows the quieter Table icons, grouped navigation, contextual bulk controls and refreshed real Unity captures. This revision does not announce a store download.

@@ -4,7 +4,7 @@
 
 **Design game data, save player progress and use JSON APIs in Unity.**
 
-**Version 1.3.0 — typed catalog models and Inspector references.** Generate C# classes from your templates and choose authored instances by name in the Inspector. [Read the changelog](CHANGELOG.md). Store availability follows the announcements for your purchase edition.
+**Version 1.4.0 — table authoring, native Undo and a guided first catalog.** Review bulk edits before applying them, undo committed draft changes and see typed catalog data drive a playable example. [Read the changelog](CHANGELOG.md). Store availability follows the announcements for your purchase edition.
 
 DataCraft brings these workflows into one Editor workspace. Define typed templates and instances, publish a read-only catalog for gameplay, save mutable progress locally, or turn an HTTP JSON response into reviewed C# code.
 
@@ -14,7 +14,7 @@ DataCraft brings these workflows into one Editor workspace. Define typed templat
 
 *Overview connects the main workflows. Screenshots show example projects, not data automatically added to yours. Click an image to view it at full size.*
 
-For example, define a Weapon template once, generate `WeaponData`, then select Iron Sword on a component and read its damage in gameplay. You maintain the template fields; DataCraft keeps the reviewed C# model in step with that schema. Existing manual DTOs remain supported. Version 1.4.0 is in final preparation; check your store for actual download availability. The new table edits existing instance drafts, reviewed batches change one field on selected rows, and committed instance edits use Unity Undo/Redo. The guided Catalog Starter shows the complete edit → publish → gameplay path.
+For example, define a Weapon template once, generate `WeaponData`, then select Iron Sword on a component and read its damage in gameplay. You maintain the template fields; DataCraft keeps the reviewed C# model in step with that schema. Existing manual DTOs remain supported. Version 1.4.0 is prepared for release; check your store for actual download availability. The new table edits existing instance drafts, reviewed batches change one field on selected rows, and committed instance edits use Unity Undo/Redo. The guided Catalog Starter shows the complete edit → publish → gameplay path.
 
 ## Choose your workflow
 

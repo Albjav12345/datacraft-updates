@@ -4,6 +4,7 @@ DataCraft 1.4.0 makes larger catalogs easier to edit and gives new users a small
 
 ## Edit instances together
 
+- A cleaner Table interface with quiet vector icons, hover descriptions, compact row actions and evenly grouped navigation. Bulk controls appear when rows are selected.
 - Switch between Cards and a responsive Table with typed values, search, view-only name sorting and eight rows per page.
 - Select rows across pages and edit one field for up to 1,024 instances at once.
 - Preview the complete batch before saving. Paginated reviews show before/after values and remaining export blockers; stale reviews cannot apply.

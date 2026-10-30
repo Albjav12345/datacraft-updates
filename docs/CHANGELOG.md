@@ -2,10 +2,13 @@
 
 ## Unreleased
 
-## 1.4.0 — Table authoring, native Undo and a guided first catalog · 2026-10-29
+No changes recorded.
+
+## 1.4.0 — Table authoring, native Undo and a guided first catalog · 2026-10-30
 
 Prepared for release. Download availability follows each store independently. Includes the catalog models, Inspector references and bounded update history from the internal 1.3 milestone.
 
+- Refine Table with consistent vector icons, descriptive tooltips, quiet Undo/Redo and selection actions, compact row editing, grouped navigation chevrons and selection-only bulk controls. Keep Cards action buttons square, dropdown labels aligned and the narrow template toolbar wrapped without clipped actions.
 - Add a responsive instance Table alongside Cards: eight rows per page, width-dependent field columns, inline typed values, readiness, search and view-only name sorting.
 - Add explicit selected-row bulk editing of one field with a frozen paginated before/after review, stale-plan checks and atomic apply. Preserve IDs/order/other fields; allow incomplete drafts with clear export blockers.
 - Add native Unity Undo/Redo for committed instance edits, instance-only imports/updates, draft schema review and one-step bulk changes. Scope history to the open workspace and clear incompatible snapshots safely after schema changes or coordinated imports.

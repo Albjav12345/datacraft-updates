@@ -4,6 +4,7 @@ DataCraft 1.4.0 facilita la edición de catálogos grandes e incorpora un peque�
 
 ## Editar varias instancias
 
+- Tabla más limpia con iconos vectoriales, ayudas al pasar el ratón, acciones compactas y navegación agrupada. El formulario de lotes aparece al seleccionar filas.
 - Alterna entre Cards y una tabla adaptable con valores tipados, búsqueda, orden visual por nombre y ocho filas por página.
 - Selecciona filas de distintas páginas y cambia un campo de hasta 1.024 instancias a la vez.
 - Revisa el lote completo antes de guardar: valores anteriores/nuevos, páginas de revisión y bloqueos que aún impiden exportar. Una revisión desactualizada no se puede aplicar.
