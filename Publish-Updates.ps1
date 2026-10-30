@@ -6,7 +6,7 @@ $metadataFiles=@('README.md','releases.json','updates-v2.json','latest.json','ar
 function Assert-PublishCheckout([string]$RepositoryRoot) {
     $remote=& git -C $RepositoryRoot remote get-url origin
     if ($LASTEXITCODE -ne 0 -or $remote.Trim() -ne 'https://github.com/Albjav12345/datacraft-updates.git') { throw 'Unexpected metadata repository remote.' }
-    $safeTracked=@($metadataFiles)+@('PUBLISHING.md')
+    $safeTracked=@($metadataFiles)+@('PUBLISHING.md','docs/devlogs/DEVLOG-ITCH-1.4.0.md','docs/devlogs/DEVLOG-ITCH-1.4.0-ES.md')
     $inventoryPath=Join-Path $RepositoryRoot 'docs/.datacraft-docs-inventory.json'
     if(Test-Path -LiteralPath $inventoryPath) {
         $inventory=Get-Content -LiteralPath $inventoryPath -Raw | ConvertFrom-Json
