@@ -98,6 +98,6 @@ If an ordinary template save fails, editing pauses and offers **Retry edit**, **
 
 The searchable offline guide covers the same rules: [wide Help](Screenshots/table-help-wide.jpg), [docked Help](Screenshots/table-help-docked.jpg).
 
-Rows alternate subtly in tone, with common input baselines and aligned column dividers. The bottom Previous/Next buttons match Cards. Columns selects fields independently of the instance pages.
+Rows share a uniform background, with common input baselines and aligned column dividers. The bottom Previous/Next buttons match Cards. Columns selects fields independently of the instance pages.
 
 The table screenshots include intentionally incomplete drafts to show validation; those example project drafts are not installed with the asset.

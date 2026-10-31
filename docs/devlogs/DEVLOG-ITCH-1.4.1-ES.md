@@ -2,7 +2,7 @@
 
 DataCraft 1.4.1 pule la edición en tabla sin cambiar los formatos de tus datos.
 
-- Tonos alternos suaves y separadores de columnas para recorrer listas con más claridad.
+- Fondo uniforme y separadores de columnas para recorrer listas con más claridad.
 - Nombres y campos alineados a la misma altura, con cabeceras sobre la misma cuadrícula.
 - Selector Columns junto a Order para elegir los campos por nombre, sin otra fila de flechas.
 - Botones Previous/Next iguales a los de Cards, con contador de páginas de instancias. La revisión de lotes utiliza los mismos controles.

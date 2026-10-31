@@ -2,7 +2,7 @@
 
 DataCraft 1.4.1 refines Table authoring without changing your data formats.
 
-- Subtle alternating row tones and column dividers make larger lists easier to scan.
+- Uniform row backgrounds and column dividers make larger lists easier to scan.
 - Instance names and typed inputs share aligned baselines; headers follow the same column grid.
 - Choose visible field groups by name through Columns beside Order. There is no separate row of field-navigation arrows.
 - Previous/Next buttons match Cards, with a labelled instance page counter. Bulk review uses the same controls.

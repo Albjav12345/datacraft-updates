@@ -37,4 +37,4 @@ Prepared 1.4 devlog text: [English](docs/devlogs/DEVLOG-ITCH-1.4.0.md) · [Espa�
 
 Presentation review, 2026-10-30: prepared 1.4.0 documentation now shows the quieter Table icons, grouped navigation, contextual bulk controls and refreshed real Unity captures. This revision does not announce a store download.
 
-Prepared **1.4.1** refines the aligned Table grid, alternating row tones and Cards-style page buttons. Its store availability is not announced yet. Devlog drafts: [English](docs/devlogs/DEVLOG-ITCH-1.4.1.md) · [Español](docs/devlogs/DEVLOG-ITCH-1.4.1-ES.md).
+Prepared **1.4.1** refines the aligned Table grid, uniform row backgrounds and Cards-style page buttons. Its store availability is not announced yet. Devlog drafts: [English](docs/devlogs/DEVLOG-ITCH-1.4.1.md) · [Español](docs/devlogs/DEVLOG-ITCH-1.4.1-ES.md).
