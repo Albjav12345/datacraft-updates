@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "packageName": "dev.amedina.datacraft",
   "latest": {
-    "version": "1.4.0",
+    "version": "1.4.1",
     "minimumUnity": "6000.0.85f1",
     "releaseNotesUrl": ""
   }

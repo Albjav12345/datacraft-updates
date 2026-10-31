@@ -2,6 +2,26 @@
   "packageName": "dev.amedina.datacraft",
   "releases": [
     {
+      "version": "1.4.1",
+      "minimumUnity": "6000.0.85f1",
+      "publishedAtUtc": "2026-10-31T11:15:58Z",
+      "kind": "fixes",
+      "importance": "normal",
+      "summary": "Aligned Table grid, uniform row backgrounds and Cards-style Previous/Next controls.",
+      "changes": [
+        "Aligned typed inputs and headers, uniform row backgrounds and column dividers.",
+        "Named Columns selector beside Order; instance and bulk review pages use the Cards Previous/Next buttons.",
+        "Refreshed authoring guidance and Help. Unity edition omits itch account/download/install code and preset restricted data providers."
+      ],
+      "affectsFrom": "1.1.1",
+      "affectsBefore": "1.4.1",
+      "mitigation": "Back up before updating. Existing draft, catalog and save formats remain supported.",
+      "stores": {
+        "itch": true,
+        "assetStore": false
+      }
+    },
+    {
       "version": "1.4.0",
       "minimumUnity": "6000.0.85f1",
       "publishedAtUtc": "2026-10-30T09:42:55Z",
