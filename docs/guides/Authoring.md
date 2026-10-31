@@ -50,7 +50,7 @@ In **View → Cards**, the up/down arrow buttons change authored instance order.
 
 ## Compare values in Table
 
-Under **Instances**, choose **View → Table**. Cards remains available for full field descriptions, list-element editors and resolving changed field bindings. Table shows eight instances per page and one to three fields at a time, according to panel width; the **Next fields** chevron changes the visible columns without horizontal page scrolling. Narrow panels stack each row's fields under its identity. Each row shows its readiness and a pencil icon (**Open in Cards**). Navigation chevrons flank their page counter; field navigation hides when every field fits. Hover an icon for its action name.
+Under **Instances**, choose **View → Table**. Cards remains available for full field descriptions, list-element editors and resolving changed field bindings. Table shows eight instances per page and one to three fields at a time, according to panel width; the **Columns** dropdown selects named groups of visible fields without horizontal page scrolling. Narrow panels stack each row's fields under its identity. Each row shows its readiness and a pencil icon (**Open in Cards**). Navigation chevrons flank their page counter; Columns selector hides when every field fits. Hover an icon for its action name.
 
 Names and text values commit with Enter or a focus change. **Set value** controls presence separately from a Boolean's **True** value; empty String, false and unset are distinct. Enums and references use their existing selectors. Table List values are complete JSON arrays; Cards offers the element editor. Numeric values use invariant notation (`1.5`). Invalid/incomplete drafts remain visible and still block export. Schema-changed bindings require resolution in Cards first.
 
@@ -92,8 +92,12 @@ If an ordinary template save fails, editing pauses and offers **Retry edit**, **
 
 [Table in a narrow dock](Screenshots/table-authoring-docked.jpg). Fields page without horizontal workspace scrolling.
 
-![Frozen before/after bulk review](Screenshots/bulk-review-wide.jpg)
 
-[Bulk review in a narrow dock](Screenshots/bulk-review-docked.jpg). Preview writes nothing; Apply is one native Undo step.
+
+. Preview writes nothing; Apply is one native Undo step.
 
 The searchable offline guide covers the same rules: [wide Help](Screenshots/table-help-wide.jpg), [docked Help](Screenshots/table-help-docked.jpg).
+
+Rows alternate subtly in tone, with common input baselines and aligned column dividers. The bottom Previous/Next buttons match Cards. Columns selects fields independently of the instance pages.
+
+The table screenshots include intentionally incomplete drafts to show validation; those example project drafts are not installed with the asset.

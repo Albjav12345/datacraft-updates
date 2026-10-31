@@ -2,7 +2,7 @@
 
 **Design game data, save player progress and use JSON APIs in Unity.**
 
-**DataCraft 1.2.1 — documentation and reliability is available on itch.io.** See the [changelog](docs/CHANGELOG.md) for the fixes. The official download was verified and announced in the signed channel on 2026-10-28. Unity Asset Store availability remains pending its separate review.
+**DataCraft 1.4.0 is currently announced for itch.io.** The signed channel governs actual download availability. Unity Asset Store remains pending its separate review.
 
 [Start here: user documentation](docs/guides/index.md) · [Installation](docs/INSTALLATION.md) · [Release notes](docs/CHANGELOG.md) · [Support](docs/SUPPORT.md)
 
@@ -36,3 +36,5 @@ Publisher maintenance is documented separately in [PUBLISHING.md](PUBLISHING.md)
 Prepared 1.4 devlog text: [English](docs/devlogs/DEVLOG-ITCH-1.4.0.md) · [Español](docs/devlogs/DEVLOG-ITCH-1.4.0-ES.md). These notes do not change signed store availability.
 
 Presentation review, 2026-10-30: prepared 1.4.0 documentation now shows the quieter Table icons, grouped navigation, contextual bulk controls and refreshed real Unity captures. This revision does not announce a store download.
+
+Prepared **1.4.1** refines the aligned Table grid, alternating row tones and Cards-style page buttons. Its store availability is not announced yet. Devlog drafts: [English](docs/devlogs/DEVLOG-ITCH-1.4.1.md) · [Español](docs/devlogs/DEVLOG-ITCH-1.4.1-ES.md).

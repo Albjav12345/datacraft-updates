@@ -4,6 +4,12 @@
 
 No changes recorded.
 
+## 1.4.1 — Aligned table grid · 2026-10-31
+
+- Align typed inputs, identities and headers to a shared grid with subtle alternating row tones and column dividers.
+- Use the Cards Previous/Next controls for table and bulk-review pages. Select visible fields separately through Columns.
+
+
 ## 1.4.0 — Table authoring, native Undo and a guided first catalog · 2026-10-30
 
 Prepared for release. Download availability follows each store independently. Includes the catalog models, Inspector references and bounded update history from the internal 1.3 milestone.
