@@ -38,6 +38,12 @@ Signatures authenticate metadata; they do not encrypt game JSON or protect a com
 
 The starting history records **1.1.1 in itch.io**, confirmed by the publisher: https://albjav12345.itch.io/datacraft/devlog/1726077/datacraft-111-unity-6-lts-full-compatibility . Asset Store remains unavailable until actual approval/public availability. The prepared 1.2.0 client is not announced as published by this setup.
 
+## Locating the original Windows signing key
+
+On 2026-11-12 the original `publisher-2026-10` key was recovered from the packaged Codex application's redirected local cache: `%LOCALAPPDATA%/Packages/OpenAI.Codex_2p2nqsd0c76g0/LocalCache/Local/DataCraftPublisher/Keys/updates-20261024.dpapi`. The encrypted file was copied to the conventional publisher location above, with access restricted to the publisher Windows account and SYSTEM. The original cache copy was preserved. Both public RSA parameters matched the existing client trust anchor; a sign/verify test passed. No new key or package release was needed.
+
+If the conventional file is missing, check that application-local cache before assuming the key was lost. Never generate a replacement silently: first decrypt the candidate in memory under the same Windows account and compare its public modulus and exponent with `publisher-public-key.json`. Keep private material out of terminal output, Git and commercial archives. DPAPI copies depend on this Windows account/machine and do not replace the password-encrypted portable backup described above.
+
 ## Authenticated itch.io artifacts
 
 `artifacts-v1.json` is a separate publisher-signed **DataCraft.UpdateArtifacts / version 1** envelope. Its public payload contains only package/version, exact itch archive filename, byte length, outer ZIP SHA-256, inner signed tarball filename and SHA-256. It contains no commercial bytes, user token or download URL. An empty list means no in-Editor artifact has been announced yet. Normal version/severity notices remain in updates-v2.json.
