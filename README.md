@@ -2,7 +2,7 @@
 
 **Design game data, save player progress and use JSON APIs in Unity.**
 
-**DataCraft 1.4.1 is currently announced for itch.io.** The signed channel governs actual download availability. Unity Asset Store remains pending its separate review.
+**DataCraft 1.5.0 is available on itch.io and Unity Asset Store.** The signed channel records availability separately for each edition. Unity updates are installed through the official Unity Package Manager; itch.io keeps its own authorized update route.
 
 [Start here: user documentation](docs/guides/index.md) · [Installation](docs/INSTALLATION.md) · [Release notes](docs/CHANGELOG.md) · [Support](docs/SUPPORT.md)
 
@@ -23,7 +23,7 @@
 
 ## Documentation and downloads
 
-These public guides cover prepared **DataCraft 1.4.1**: Table/bulk editing, native instance Undo/Redo, the guided Catalog Starter and the models/Inspector improvements from the internal 1.3 milestone. **1.4.1 is not yet announced as downloadable in a store.** Customers with an earlier version should use their included offline manual or update when their store offers it. Documentation and store downloads follow separate publication schedules. Real Unity screenshots use example projects; names/counts are not automatically installed content.
+The public guide mirror was prepared for **DataCraft 1.4.1** and covers Table/bulk editing, native instance Undo/Redo, Catalog Starter and model/Inspector workflows. For the new 1.5.0 column chooser, expanded continuous table and reliability improvements, use the offline manual included in your download and the [signed release history](releases.json). Documentation and store downloads follow separate publication schedules. Real Unity screenshots use example projects; names/counts are not automatically installed content.
 
 This repository contains user documentation, public signed release metadata and publisher tools. It contains **no commercial package source, customer data or downloadable asset archive**. Obtain the asset/update through your purchase store. Retail editions follow their own store's entitlement and availability; a pending Unity review is not an approved downloadable release.
 
@@ -33,8 +33,4 @@ Questions, bugs or feedback: **[amedina.amg.dev@gmail.com](mailto:amedina.amg.de
 
 Publisher maintenance is documented separately in [PUBLISHING.md](PUBLISHING.md). Documentation-only commits do not change signed notices or announce a new package.
 
-Prepared 1.4 devlog text: [English](docs/devlogs/DEVLOG-ITCH-1.4.0.md) · [Español](docs/devlogs/DEVLOG-ITCH-1.4.0-ES.md). These notes do not change signed store availability.
-
-Presentation review, 2026-10-30: prepared 1.4.0 documentation now shows the quieter Table icons, grouped navigation, contextual bulk controls and refreshed real Unity captures. This revision does not announce a store download.
-
-**1.4.1 is available on itch.io** with an aligned Table grid, uniform row backgrounds and Cards-style page buttons. Release notes: [English](docs/devlogs/DEVLOG-ITCH-1.4.1.md) · [Español](docs/devlogs/DEVLOG-ITCH-1.4.1-ES.md).
+Previous itch.io release notes: **1.4.1** — [English](docs/devlogs/DEVLOG-ITCH-1.4.1.md) · [Español](docs/devlogs/DEVLOG-ITCH-1.4.1-ES.md); **1.4.0** — [English](docs/devlogs/DEVLOG-ITCH-1.4.0.md) · [Español](docs/devlogs/DEVLOG-ITCH-1.4.0-ES.md).

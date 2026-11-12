@@ -2,6 +2,29 @@
   "packageName": "dev.amedina.datacraft",
   "releases": [
     {
+      "version": "1.5.0",
+      "minimumUnity": "6000.0.85f1",
+      "publishedAtUtc": "2026-11-11T14:13:46Z",
+      "kind": "features",
+      "importance": "recommended",
+      "summary": "Choose table columns, expand continuous editing and use stronger instance save and Undo foundations.",
+      "changes": [
+        "Search and remember individual column choices per project/template; expand the same table into a continuous virtual list.",
+        "Equal responsive name/data columns and one reachable horizontal scrollbar; names, selection and values scroll together.",
+        "Refined compact headers, Boolean controls and Cards/Table navigation.",
+        "Reduce repeated authoring scans and redundant history serialization without changing IDs, public Runtime APIs or data formats.",
+        "Bounded recovery from brief file-sharing conflicts and exact intended-byte checks protect ordinary instance saves.",
+        "Unity Asset Store edition uses signed notices and the official Unity Package Manager interface; itch account/download/install/restore code and restricted provider presets are physically omitted."
+      ],
+      "affectsFrom": "1.1.1",
+      "affectsBefore": "1.5.0",
+      "mitigation": "Back up before upgrading. Draft editing and Project Data publication remain separate. Existing IDs, catalogs and save formats remain supported.",
+      "stores": {
+        "assetStore": true,
+        "itch": true
+      }
+    },
+    {
       "version": "1.4.1",
       "minimumUnity": "6000.0.85f1",
       "publishedAtUtc": "2026-10-31T11:15:58Z",
@@ -18,7 +41,7 @@
       "mitigation": "Back up before updating. Existing draft, catalog and save formats remain supported.",
       "stores": {
         "itch": true,
-        "assetStore": false
+        "assetStore": true
       }
     },
     {
